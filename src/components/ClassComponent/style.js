@@ -1,4 +1,3 @@
-// Простой js объект описывающий стили компонента
 const styles = {
     button: {
       backgroundColor: "grey",

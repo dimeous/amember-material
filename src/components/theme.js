@@ -1,4 +1,3 @@
-// Простой js объект дэфолтных стилей
 const theme = {
     button: {
       backgroundColor: "grey",

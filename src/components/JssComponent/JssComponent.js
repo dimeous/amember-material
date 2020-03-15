@@ -3,7 +3,6 @@ import React from "react";
 import useStyles from "./style";
 
 export default function JssComponent() {
-  // получаем метод для генерации классов jss
   const classes = useStyles();
 
   return (

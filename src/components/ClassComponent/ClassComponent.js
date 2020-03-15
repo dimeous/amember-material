@@ -13,5 +13,4 @@ class ClassComponent extends React.Component {
   }
 }
 
-// Опрокидываем в пропс метод для генерации классов
 export default withStyles(styles)(ClassComponent);

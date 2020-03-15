@@ -1,8 +1,6 @@
-// Импортируем метод с возможностью переопределения стилей заданных классов компонентам material по умолчанию
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const createdTheme = createMuiTheme({
-    // Переопределяющее свойство
     overrides: {
       MuiButton: {
         root: {

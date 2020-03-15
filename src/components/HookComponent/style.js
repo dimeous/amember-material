@@ -1,4 +1,3 @@
-// Импортируем метод для создания функции, возвращающая объект стилей
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({

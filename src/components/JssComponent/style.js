@@ -1,4 +1,3 @@
-// Импорт метода для создания функции, возвращающей объект стилей
 import { createUseStyles } from "react-jss";
 
 const rootStyle = {
