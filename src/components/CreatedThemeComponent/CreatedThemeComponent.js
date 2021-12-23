@@ -1,7 +1,7 @@
-import React from "react";
-import { Button } from "@material-ui/core";
+import React from 'react';
+import { Button } from '@mui/material';
 
-const CreatedThemeComponent = props => {
+const CreatedThemeComponent = (props) => {
   return <Button>CreatedThemeComponent</Button>;
 };
 

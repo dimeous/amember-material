@@ -1,6 +1,6 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from '@mui/material/styles'
 
-const createdTheme = createMuiTheme({
+const createdTheme = createTheme({
     overrides: {
       MuiButton: {
         root: {

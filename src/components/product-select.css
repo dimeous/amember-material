@@ -1,0 +1,54 @@
+.MuiTypography-body1 {
+    color: #124258;
+}
+
+.price-box {
+    border: 1px solid #E6ECEF;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 224px;
+    height: 192px;
+    color: #124258;
+}
+
+.price-title {
+    background: #F6F8FA;
+    border: 1px solid #E6ECEF;
+    box-sizing: border-box;
+    border-radius: 8px 8px 0px 0px;
+    width: 100%;
+    height: 43px;
+    text-align: left;
+}
+
+.price-title > span {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    padding: 8px 24px 24px;
+}
+
+.plan-price-box {
+    padding: 8px 24px;
+    text-align: left;
+}
+
+.price-val {
+    font-size: 24px;
+    line-height: 150%;
+}
+
+.data-not-included {
+    font-size: 12px;
+    line-height: 19px;
+    width: fit-content;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px 8px;
+    background: rgba(18, 66, 88, 0.06);
+    border: 1px solid rgba(18, 66, 88, 0.24);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
