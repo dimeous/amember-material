@@ -4,17 +4,22 @@ const plans = [
   {
     planName: 'Global Monthly',
     price: '49',
-    currency: 'EUR'
+    currency: 'EUR',
+    term: '/month'
   },
   {
     planName: 'Global Yearly',
-    price: '49',
-    currency: 'EUR'
+    price: '39',
+    totalPrice: '468',
+    totalText: '/total upfront payment',
+    currency: 'EUR',
+    term: '/month'
   },
   {
     planName: 'Global lifetime',
     price: '900',
-    currency: 'EUR'
+    currency: 'EUR',
+    term: '/Lifetime'
   }
 ];
 
@@ -30,7 +35,7 @@ const SelectPlan = () => (
             <span className={'price-val'}>
               {v.price} {v.currency}
             </span>
-            <span className={'price-period'}>/month</span>
+            <span className={'price-period'}>{v.term}</span>
           </Box>
           <Typography component={'div'} className={'data-not-included'} sx={{ ml: 3 }}>
             Data not included
