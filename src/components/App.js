@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button, Typography, FormControl, Select, MenuItem } from '@mui/material';
+import { Box, Button, Typography, FormControl, Select, MenuItem, Divider } from '@mui/material';
 import { ThemeProvider, makeStyles } from '@mui/styles';
 import { createTheme } from '@mui/material/styles';
 import './product-select.css';
@@ -95,6 +95,11 @@ function App() {
               </FormControl>
             </Box>
             <SelectPlan />
+            <Typography>What asset class do you trade?</Typography>
+            <Button variant="outlined">Crypto</Button>
+            <Button variant="outlined">Futures</Button>
+            <Button variant="outlined">Stocks</Button>
+            <Divider />
           </Box>
           <Box></Box>
         </Box>
