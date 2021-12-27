@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button, Typography, FormControl, Select, MenuItem, Divider } from '@mui/material';
+import { Box, Button, Typography, FormControl, Select, MenuItem, Divider, TextField } from '@mui/material';
 import { ThemeProvider, makeStyles } from '@mui/styles';
 import { createTheme } from '@mui/material/styles';
 import './product-select.css';
@@ -99,7 +99,29 @@ function App() {
             <Button variant="outlined">Crypto</Button>
             <Button variant="outlined">Futures</Button>
             <Button variant="outlined">Stocks</Button>
+            <Typography variant={'h3'}>Personal Information</Typography>
+            <Typography>If you have an account, please login here.</Typography>
+            <input type="checkbox" value="crypto" name="assets_raded[]" id="qfauto-2" />
+            <input type="checkbox" value="futures" name="assets_raded[]" id="qfauto-3" />
+            <input type="checkbox" value="equities" name="assets_raded[]" id="qfauto-4" />
+            <TextField id="name_f" name="name_f" label="First Name" variant="outlined" />
+            <TextField id="name_l" name="name_l" label="Last Name" variant="outlined" />
+            <TextField id="email-0" name="email" label="Email" variant="outlined" />
+            <TextField id="pass-0" name="pass" label="Password" type={'password'} variant="outlined" />
+            <TextField id="phone-0" name="phone" label="Telephone" variant="outlined" />
+            <TextField id="phone-0" name="phone" label="Telephone" variant="outlined" />
+            <TextField id="tax_id-0" name="tax_id" label="EU VAT ID (Optional)" variant="outlined" />
+
             <Divider />
+            <input
+              type="radio"
+              name="paysys_id"
+              data-recurring="true"
+              checked="checked"
+              value="stripe"
+              id="paysys_id---0"
+            />
+            <input type="radio" name="paysys_id" data-recurring="true" value="paypal" id="paysys_id---1" />
           </Box>
           <Box></Box>
         </Box>
