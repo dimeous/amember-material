@@ -52,3 +52,43 @@
     box-sizing: border-box;
     border-radius: 10px;
 }
+
+.payment-system {
+    border: 1px solid #E6ECEF;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 268px;
+    height: 108px;
+}
+
+.paysystem-title {
+    padding: 22px 22px;
+    display: flex;
+    align-items: center;
+}
+
+.box-process {
+
+}
+
+.main-text {
+    color: #0085F9;
+}
+
+.grey-text {
+    color: #8DA2AC;
+}
+
+.pay-with {
+    padding-left: 24px;
+}
+.checkboxes input[type="checkbox"] {
+    opacity: 0;
+}
+
+.order-summary{
+    width: 352px;
+    height: 265px;
+    background: #F6F8FA;
+    border-radius: 8px;
+}

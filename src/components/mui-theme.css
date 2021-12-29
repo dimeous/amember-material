@@ -1,0 +1,16 @@
+.MuiTypography-h2 {
+    font-weight: 500;
+    font-size: 32px!important;
+    line-height: 150%;
+}
+.MuiTypography-h4 {
+    font-weight: 500;
+    font-size: 20px!important;
+    line-height: 150%;
+}
+.MuiTypography-h3 {
+    font-weight: 500;
+    font-size: 24px!important;
+    line-height: 150%;
+    color: #124258;
+}
