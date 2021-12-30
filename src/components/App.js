@@ -17,6 +17,7 @@ import { createTheme } from '@mui/material/styles';
 import './product-select.css';
 import './mui-theme.css';
 import SelectPlan from './product/select-plan';
+import CountrySelect from './country-select';
 
 const useStyles = makeStyles({
   headBox: {
@@ -159,8 +160,7 @@ function App() {
                 <TextField id="name_l" name="name_l" label="Last Name" variant="outlined" />
                 <TextField id="email-0" name="email" label="Email" variant="outlined" />
                 <TextField id="pass-0" name="pass" label="Password" type={'password'} variant="outlined" />
-                <TextField id="phone-0" name="phone" label="Telephone" variant="outlined" />
-                <TextField id="phone-0" name="phone" label="Telephone" variant="outlined" />
+                <CountrySelect />
                 <TextField id="tax_id-0" name="tax_id" label="EU VAT ID (Optional)" variant="outlined" />
               </Box>
               <Divider />
