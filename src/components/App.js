@@ -166,9 +166,10 @@ function App() {
               <Divider />
             </Box>
             <Box>
+              <Typography variant={'h3'}>Payment system</Typography>
               <input type="hidden" name="paysys_id" data-recurring="true" value="stripe" id="paysys_id---1" />
               {payments.map((value) => (
-                <ButtonBase onClick={() => handlePaysystem(value)} key={value}>
+                <ButtonBase onClick={() => handlePaysystem(value)} key={value} className={'payment-system-button'}>
                   <Box className={'payment-system'}>
                     <Typography component={'div'} className={'paysystem-title'}>
                       {paysystem == value ? (
@@ -186,7 +187,13 @@ function App() {
               ))}
             </Box>
             <Divider />
-            <input type="submit" value="Next" className="am-cta-signup" name="_qf_page-0_next" id="_qf_page-0_next-0" />
+            <input
+              type="submit"
+              value="Proceed to payment"
+              className="am-cta-signup"
+              name="_qf_page-0_next"
+              id="_qf_page-0_next-0"
+            />
             <Divider />
           </Grid>
           <Grid md={3} item>

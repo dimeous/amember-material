@@ -18,7 +18,7 @@ const plans = [
     term: '/month'
   },
   {
-    id: '107-108',
+    id: '109-110',
     planName: 'Global lifetime',
     price: '900',
     currency: 'EUR',
@@ -34,10 +34,18 @@ const SelectPlan = () => {
   return (
     <Box>
       {plans.map((v, index) => (
-        <ButtonBase key={index} onClick={() => handleSetPlan(v.id)} className={v.id == plan ? 'active-plan' : ''}>
+        <ButtonBase
+          key={index}
+          onClick={() => handleSetPlan(v.id)}
+          className={v.id == plan ? 'plan-box active-plan' : 'plan-box'}>
           <Box className={'price-box'}>
             <Box className={'price-title'}>
               <span>{v.planName}</span>
+              {v.id == plan && (
+                <div className={'check-plan'}>
+                  <i className="material-icons">check_circle</i>
+                </div>
+              )}
             </Box>
             <Box className={'plan-price-box'}>
               <span className={'price-val'}>
