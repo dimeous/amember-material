@@ -10,7 +10,8 @@ import {
   Divider,
   TextField,
   ButtonBase,
-  Grid
+  Grid,
+  Link
 } from '@mui/material';
 import { ThemeProvider, makeStyles } from '@mui/styles';
 import { createTheme } from '@mui/material/styles';
@@ -158,12 +159,24 @@ function App() {
                 <input type="checkbox" value="futures" name="assets_raded[]" id="qfauto-3" checked={tradeAssets[1]} />
                 <input type="checkbox" value="equities" name="assets_raded[]" id="qfauto-4" checked={tradeAssets[2]} />
               </div>
-              <Typography variant={'h3'}>Personal Information</Typography>
-              <Typography>If you have an account, please login here.</Typography>
+              <Typography variant={'h3'} sx={{ pb: 1, pt: 6 }}>
+                Personal Information
+              </Typography>
+              <Typography sx={{ pb: 3 }}>
+                If you have an account, please{' '}
+                <Link
+                  href={
+                    'https://bookmap.com/members/login?amember_redirect_url=%2Fmembers%2Fsignup%2FyVqUeUzF%3Fproduct_id_page-0%3D171-171'
+                  }>
+                  login
+                </Link>{' '}
+                here.
+              </Typography>
               <Divider />
               <Box
                 sx={{
-                  '& .MuiTextField-root': { m: 1, width: '25ch' }
+                  '& .MuiTextField-root': { m: 1, width: '25ch' },
+                  pt: 2
                 }}>
                 <TextField id="name_f" name="name_f" label="First Name" variant="outlined" />
                 <TextField id="name_l" name="name_l" label="Last Name" variant="outlined" />
@@ -236,12 +249,14 @@ function App() {
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid container>
+                <Grid container sx={{ pt: 2 }}>
                   <Grid item xs={9}>
-                    <Typography>Total</Typography>
+                    <Typography className={'total'}>Total</Typography>
                   </Grid>
                   <Grid item xs={3}>
-                    <Typography align={'right'}>548 EUR</Typography>
+                    <Typography align={'right'} className={'total'}>
+                      548 EUR
+                    </Typography>
                   </Grid>
                 </Grid>
               </Box>
