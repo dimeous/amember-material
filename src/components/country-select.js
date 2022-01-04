@@ -3,7 +3,13 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
-export default function CountrySelect() {
+const CountrySelect = (props: { countriesList: string[] }) => {
+  const { countriesList }=props;
+  const countries = countriesList.map((v) => {
+    const obj = countriesArray.find((o) => o.code === v);
+    if (obj) return  obj ;
+  });
+  console.log(countries);
   return (
     <div>
       <Autocomplete
@@ -37,10 +43,10 @@ export default function CountrySelect() {
       />
     </div>
   );
-}
+};
 
 // From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js
-const countries = [
+const countriesArray = [
   { code: 'AD', label: 'Andorra', phone: '376' },
   {
     code: 'AE',
@@ -464,3 +470,5 @@ const countries = [
   { code: 'ZM', label: 'Zambia', phone: '260' },
   { code: 'ZW', label: 'Zimbabwe', phone: '263' }
 ];
+
+export default CountrySelect;
