@@ -14,6 +14,7 @@ const plans = [
     price: '39',
     totalPrice: '468',
     totalText: '/total upfront payment',
+    save: '*Save 120 EUR with a yearly plan',
     currency: 'EUR',
     term: '/month'
   },
@@ -37,11 +38,11 @@ const SelectPlan = () => {
         <ButtonBase
           key={index}
           onClick={() => handleSetPlan(v.id)}
-          className={v.id == plan ? 'plan-box active-plan' : 'plan-box'}>
+          className={v.id === plan ? 'plan-box active-plan' : 'plan-box'}>
           <Box className={'price-box'}>
             <Box className={'price-title'}>
               <span>{v.planName}</span>
-              {v.id == plan && (
+              {v.id === plan && (
                 <div className={'check-plan'}>
                   <i className="material-icons">check_circle</i>
                 </div>
@@ -53,6 +54,15 @@ const SelectPlan = () => {
               </span>
               <span className={'price-period'}>{v.term}</span>
             </Box>
+            {v.totalPrice && (
+              <Box sx={{ pb: 1 }}>
+                <span className={'total-price-val'}>
+                  {v.totalPrice} {v.currency}
+                </span>
+                <span className={'total-price-text'}>{v.totalText}</span>
+              </Box>
+            )}
+            {v.save && <Typography className={'save-text'}>{v.save}</Typography>}
             <Typography component={'div'} className={'data-not-included'} sx={{ ml: 3 }}>
               Data not included
             </Typography>

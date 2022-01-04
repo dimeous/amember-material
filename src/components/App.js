@@ -82,42 +82,51 @@ function App() {
             <Box>
               <Button
                 variant="text"
+                className={'top-button'}
                 startIcon={
-                  tradeAssets[0] ? (
-                    <img src={'/wp-content/themes/bookmap/assets/react/product/table-fill.png'} />
-                  ) : undefined
+                  <img src={'/wp-content/themes/bookmap/assets/react/product/table-fill.png'} alt={'pricing'} />
                 }>
                 Package
               </Button>
               <Button
                 variant="text"
-                startIcon={<img src={'/wp-content/themes/bookmap/assets/react/product/book-read-fill.png'} />}>
+                className={'top-button'}
+                sx={{ ml: '100px' }}
+                startIcon={
+                  <img src={'/wp-content/themes/bookmap/assets/react/product/book-read-fill.png'} alt={'current'} />
+                }>
                 Details
               </Button>
               <Button
                 variant="text"
-                startIcon={<img src={'/wp-content/themes/bookmap/assets/react/product/bank-card-fill.png'} />}>
+                className={'top-button'}
+                sx={{ ml: '100px' }}
+                startIcon={
+                  <img src={'/wp-content/themes/bookmap/assets/react/product/bank-card-fill.png'} alt={'end'} />
+                }>
                 Payment
               </Button>
             </Box>
             <Box>
-              <img src={'/wp-content/themes/bookmap/assets/react/product/radio-button-line.svg'} />
-              <img src={'/wp-content/themes/bookmap/assets/react/product/radio-button-line.svg'} />
-              <img src={'/wp-content/themes/bookmap/assets/react/product/focus-line.svg'} />
+              <img src={'/wp-content/themes/bookmap/assets/react/product/radio-button-line.svg'} alt={'pricing'} />
+              <div className={'line-box'} />
+              <img
+                src={'/wp-content/themes/bookmap/assets/react/product/radio-button-line.svg'}
+                alt={'current'}
+                className={'active-color'}
+              />
+              <div className={'line-box rotate180'} />
+              <img src={'/wp-content/themes/bookmap/assets/react/product/focus-line.svg'} alt={'end'} />
             </Box>
           </Box>
         </Box>
-        <Grid container>
+        <Grid container sx={{ pt: 2 }}>
           <Grid md={9} item>
             <Box>
-              <Box sx={{ display: 'inline' }}>
-                <Typography display={'inline'}>Choose your billing cycle for Global package</Typography>
-                <FormControl marginNormal>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={currency}
-                    onChange={handleChange}>
+              <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }}>
+                <Typography>Choose your billing cycle for Global package</Typography>
+                <FormControl marginNormal size="small" sx={{ ml: 39 }}>
+                  <Select id="demo-simple-select" value={currency} onChange={handleChange}>
                     <MenuItem value={'USD'}>USD</MenuItem>
                     <MenuItem value={'EUR'}>EUR</MenuItem>
                     <MenuItem value={'GPB'}>GPB</MenuItem>
@@ -172,16 +181,16 @@ function App() {
                 <ButtonBase onClick={() => handlePaysystem(value)} key={value} className={'payment-system-button'}>
                   <Box className={'payment-system'}>
                     <Typography component={'div'} className={'paysystem-title'}>
-                      {paysystem == value ? (
+                      {paysystem === value ? (
                         <span className="material-icons main-text">check_circle</span>
                       ) : (
                         <span className="material-icons grey-text ">radio_button_unchecked</span>
                       )}
                       <div className={'pay-with MuiTypography-h4'}>
-                        Pay with {value == 'paypal' ? 'Paypal' : 'card'}
+                        Pay with {value === 'paypal' ? 'Paypal' : 'card'}
                       </div>
                     </Typography>
-                    <img src={'/wp-content/themes/bookmap/assets/react/product/' + value + '.png'}></img>
+                    <img src={'/wp-content/themes/bookmap/assets/react/product/' + value + '.png'} alt={value} />
                   </Box>
                 </ButtonBase>
               ))}
@@ -198,40 +207,44 @@ function App() {
           </Grid>
           <Grid md={3} item>
             <Box className={'order-summary'}>
-              <Typography variant={'h3'}>Order Summary</Typography>
-              <Grid container>
-                <Grid item xs={9}>
-                  <Typography>Bookmap Global Yearly</Typography>
+              <Box sx={{ p: 2 }}>
+                <Typography variant={'h3'} sx={{ pb: 2 }}>
+                  Order Summary
+                </Typography>
+                <Grid container sx={{ pb: 2 }}>
+                  <Grid item xs={9}>
+                    <Typography>Bookmap Global Yearly</Typography>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <Typography align={'right'}>548 EUR</Typography>
+                  </Grid>
                 </Grid>
-                <Grid item xs={3}>
-                  <Typography align={'right'}>548 EUR</Typography>
+                <Grid container sx={{ pb: 2 }}>
+                  <Grid item xs={9}>
+                    <Typography>VAT</Typography>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <Typography align={'right'}>548 EUR</Typography>
+                  </Grid>
                 </Grid>
-              </Grid>
-              <Grid container>
-                <Grid item xs={9}>
-                  <Typography>VAT</Typography>
+                <Grid container sx={{ pb: 2 }}>
+                  <Grid item xs={9}>
+                    <Typography>Sub-total</Typography>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <Typography align={'right'}>548 EUR</Typography>
+                  </Grid>
                 </Grid>
-                <Grid item xs={3}>
-                  <Typography align={'right'}>548 EUR</Typography>
+                <Divider />
+                <Grid container>
+                  <Grid item xs={9}>
+                    <Typography>Total</Typography>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <Typography align={'right'}>548 EUR</Typography>
+                  </Grid>
                 </Grid>
-              </Grid>
-              <Grid container>
-                <Grid item xs={9}>
-                  <Typography>Sub-total</Typography>
-                </Grid>
-                <Grid item xs={3}>
-                  <Typography align={'right'}>548 EUR</Typography>
-                </Grid>
-              </Grid>
-              <Divider />
-              <Grid container>
-                <Grid item xs={9}>
-                  <Typography>Total</Typography>
-                </Grid>
-                <Grid item xs={3}>
-                  <Typography align={'right'}>548 EUR</Typography>
-                </Grid>
-              </Grid>
+              </Box>
             </Box>
           </Grid>
         </Grid>
