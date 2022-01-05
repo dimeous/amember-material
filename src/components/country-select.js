@@ -3,7 +3,15 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
-export default function CountrySelect() {
+export default function CountrySelect({ phoneRef }) {
+  const handleChange = (value) => {
+    console.log(value);
+    const inputCountry = window.document.getElementById('f_country');
+    inputCountry.value = value.code;
+    if (phoneRef.value.length < 5) {
+      phoneRef.value = value.phone;
+    }
+  };
   return (
     <div>
       <Autocomplete
@@ -24,6 +32,9 @@ export default function CountrySelect() {
             {option.label} ({option.code}) +{option.phone}
           </Box>
         )}
+        onChange={(event, newValue) => {
+          handleChange(newValue);
+        }}
         renderInput={(params) => (
           <TextField
             {...params}
